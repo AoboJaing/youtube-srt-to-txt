@@ -140,7 +140,7 @@ the last line: hello world in the new file.
 
 ## 实战：从字幕文件中提取字幕内容
 
-github源代码网址：
+github源代码网址：https://github.com/AoboJaing/youtube-srt-to-txt
 
 ### 如何获取字幕文件
 
