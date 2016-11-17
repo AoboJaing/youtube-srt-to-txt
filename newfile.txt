@@ -1,0 +1,432 @@
+Youtube subtitles download by mo.dbxdb.com 
+Youtube subtitles download by mo.dbxdb.com 
+In this video I would like to explain the functionality of servos and how to convert conventional DC motors into homebuilt servos.
+在这部影片中，我想解释一下舵机以及如何传统的直流电动机转换成自制伺服系统的功能。 
+A servo is a device that produces motion accordant to a command signal from a control system.
+伺服是，从一个控制系统产生运动一致来的命令信号的装置。 
+Usually an electric motor is used to create a mechanical force and the servomechanism rotates at a velocity that approximates the command signal.
+一般的电动机被用来创建一个机械力和伺服机构在近似于指令信号的速度旋转。 
+A sensor attached to the servomechanism reports the motor's actual status back to the control circuit of the motor.
+连接到伺服机构的传感器报告电机的实际状态返回到电动机的控制电路。 
+Here you can see a servo typically used for radio control or small robotics and it is disassembled to show the components.
+在这里，你可以看到一个伺服通常用于无线电控制或小型机器人，它被拆卸中显示的组件。 
+The electric motor converts electric energy into movement.
+电动机将电能转换为运动。 
+To amplify the torque of the tiny motor, a transmission consisting of 5 gear wheels is used.
+扩增微小电动机的转矩，使用由5齿轮的传动。 
+The total ratio of the compound gear train is 294 to 1, thus the electric motor must make 294 revolutions to every one revolution of the gear at the output shaft.
+化合物齿轮系的总比例是294比1，从而电动机必须使294转到在输出轴上的齿轮每一个革命。 
+The measured torque at the servo horn, which is the lever connected to the output of the gear, is 36Ncm, by what the torque of the motor is just 0.12Ncm, considering the mechanical advantage of the gear train.
+在伺服喇叭测量的转矩，这是连接到所述齿轮的输出杆，是36Ncm，由什么电动机的转矩仅仅0.12Ncm，考虑到齿轮系的机械优势。 
+With increasing supply voltage, the torque is increasing, too, hence we get a torque of 44Ncm at the servo horn when using a 6V battery.
+随着电源电压的增加，转矩增加，也因此我们使用一个6V电池时在伺服喇叭得到44Ncm的扭矩。 
+The angular velocity of the servo horn, commonly named the speed of the servo, is decreasing with increasing ratio of the compound gear train.
+伺服喇叭的角速度，通常命名伺服的速度，与增加化合物齿轮系的比率递减。 
+We get 0.27 seconds for a 90 degree rotation at a supply voltage of 5V.
+我们得到0.27秒一个90度旋转在5V电源电压。 
+The speed also depends on the voltage, hence we get 0.23 seconds at 6V.
+速度还取决于电压，因此我们在6V得到0.23秒。 
+A potentiometer is operating as rotational sensor of the servo horn.
+电位计经营为伺服喇叭的旋转传感器。 
+The voltage at the middle pin of the device is proportional to the angle of rotation.
+在该装置的中部销上的电压正比于旋转角度。 
+According to the voltage output of the potentiometer, the electric motor is controlled by the board at the bottom of the servo.
+根据电位器的电压输出，电动马达由板在伺服的底部的控制。 
+Servos used in small-scale robotics applications or in radio controlled vehicles are usually set by a pulse-width signal.
+在小规模的机器人应用或无线电控制的车辆中使用的伺服系统通常是由一个脉冲宽度信号设定。 
+The base frequency of the control signal consists of a 50Hz pulse train with a duty cycle varying between 5% and 10%, determining the position of the servo. 
+该控制信号的基频是由用5％和10％之间的占空比变化，确定所述伺服的位置的50Hz的脉冲串。 
+Most servos have a 90° range of motion with a pulse length of 2ms according to an angle of +45°, 1.5ms according to the middle position which is 0° and 1ms according to an angle of -45°.
+最伺服具有90°的运动范围以2毫秒的脉冲长度根据为+ 45°的角度，为1.5ms根据中间位置，这是在0°和1毫秒根据-45°的角度。 
+The servos of different manufacturers behave slightly differently, thus the angle of rotation can be extended up to 180° when using pulses ranging from nearly 0ms to 3ms.
+不同厂家的伺服表现略有不同，采用脉冲从近0毫秒至3毫秒，当这样的旋转角度可以扩展到180°。 
+We get 2.4ms for +90° and 0.6ms for -90° at the servo shown here.
+我们得到+ 90°2.4ms和0.6ms在这里显示的伺服-90°。 
+Usually there are hard stops at the output shaft, limiting the angle rotation.
+通常有硬停止在输出轴，限制了角度旋转。 
+To avoid damage, you should not drive a servo with pulse signals causing the motor to press against the hard stops.
+为避免损坏，你不应该开车带脉冲信号使电机压靠在硬停止伺服。 
+The motor is drawing a high current whenever the rotation is blocked.
+电机绘制每当旋转被阻止高电流。 
+Furthermore the gear wheels might get destroyed if the torque of the electric motor is high enough.
+此外，齿轮可能会被破坏，如果电动机的转矩是足够高的。 
+Most servos have a failsafe feature that powers down the motor if the servo receives no or too long pulses and the device is still connected to the power supply.
+最伺服有断电电动机如果伺服没有收到或过长脉冲和装置仍然连接到电源故障保护功能。 
+In the video about pulse-width modulation, a circuit composed of an inverting Schmitt trigger and two diodes was introduced.
+在关于脉冲宽度调制的视频，引入了一个翻转施密特触发器和两个二极管构成的电路。 
+By choosing appropriate values for the capacitor / resistor combination, the circuit can be used as servo driver.
+通过为电容器/电阻器的组合中选择适当的值，电路可被用作伺服驱动器。 
+With an oscilloscope you can adjust a base frequency of 50Hz by turning potentiometer number 1 which correlates to a periodical time of 20ms.
+用示波器可以通过旋转电位器1号这关联到20ms的周期性调整的时间50赫兹的基本频率。 
+By turning potentiometer number 2, the duty cycle is varied, thus the servo can be controlled.
+通过转动电位计数2，占空比被改变，从而在伺服可以控制的。 
+You can adjust a pulse length ranging from 0.6 to 4.4ms.
+您可以调整脉冲长度从0.6到4.4ms。 
+The servo horn is rotating according to the pulse width of the control signal.
+伺服喇叭根据控制信号的脉冲宽度转动。 
+The base frequency is usually not critical, hence the calibration is not absolutely necessary.
+基本频率通常不是关键的，因此该校准不是绝对必要的。 
+As you can see, the angle of rotation is kept constant even while altering the periodical time of the pulse train.
+正如可以看到，旋转角度保持恒定，即使当改变脉冲序列的周期时间。 
+Simply keep the potentiometer at its middle position.
+只要保持在它的中间位置的电位器。 
+Now that we are able to generate the control signal, we will discover the functionality of the electronics inside of a servo.
+现在我们能够产生控制信号，我们将会发现电子的功能的伺服的内部。 
+The pulse-width signal has to be turned into a movement of the motor by the control circuit.
+脉冲宽度信号必须被变成电动机的由所述控制电路的动作。 
+The simple layout used in this video is capable to demonstrate the functionality:
+在这个视频中使用的简单的布局能够以展示功能： 
+First of all, the pulse-width signal has to be converted into a 0 to 0.5V DC signal using a low-pass filter.
+首先，脉冲宽度信号必须被转换成使用低通滤波器0到0.5V DC信号。 
+The capacitor is permanently charged respectively discharged by the pulse-width signal, thus the curve progression gets smoothened at the output of the filter.
+电容器被永久地由脉冲宽度信号，从而在曲线进展得到在滤波器的输出平滑带电分别排出。 
+The smoothing effect translates the input signal into the average output voltage of the pulse-width signal.
+的平滑效果转换输入信号成脉冲宽度信号的平均输出电压。 
+A disadvantage of this simple filter is the ripple at the output signal, which can't be removed completely, but made as small as possible.
+这种简单的过滤器的一个缺点是在输出信号，它不能被完全去除，但制成尽可能小的波动。 
+The higher the capacitance and the resistance of the filter, the lower the ripple.
+的电容和滤波器的电阻越高，波纹越低。 
+If the resistance of the potentiometer is increasing, the ripple is decreasing clearly.
+如果该电位器的电阻值增加，波纹显然减少。 
+We can detect a ripple of almost 70mV at the output of the middle filter, consisting of a 33kiloohm resistor and a 4.7microfarad capacitor.
+我们可以在中间滤波器的输出检测几乎70mV的脉动，由一个33kiloohm电阻和4.7microfarad电容器。 
+The ripple of the left low-pass, composed of a 200kiloohm resistor and a 47microfarad capacitor is lower than what we can measure with the used oscilloscope.
+左低通的波纹，一200kiloohm电阻和电容47microfarad组成的比我们可以用示波器使用测量低。 
+The DC voltage at the output of the low-pass filter is following a change of the pulse-width signal faster, the lower the capacitance respectively the resistance of the circuit.
+在低通滤波器的输出处的直流电压以下脉冲宽度的信号的变化速度，电容分别电路的电阻越低。 
+If the duty cycle of the pulse-width signal is varied rapidly from it's maximum to its minimum value or vice versa, the DC voltage at the output of the left low-pass filter is decreasing respectively increasing slowly.
+如果脉冲宽度信号的占空比急剧改变从它的最大值为最小值，反之亦然，在左侧的低通滤波器的输出处的直流电压降低分别缓慢增加。 
+At the middle circuit, the output signal is following a variation of the pulse-width signal significantly faster, however there is a noticeable ripple at the output signal.
+在中间电路中，输出信号被以下显著更快脉冲宽度信号的变化，但有在输出信号的显着的波动。 
+The values of an RC filter are always a compromise between those contrary requirements and as we will see some later, a small ripple can be useful. 
+ RC滤波器的值总是那些违背要求折衷和我们一样会看到一些后，小波纹可能是有用的。 
+So the input signal is smoothened clearly at the output of a low-pass filter.
+因此输入信号在低通滤波器的输出清晰平滑。 
+What happens if another low-pass filter is connected to the output of the first circuit?
+如果另一个低通滤波器被连接到第一电路的输出会发生什么？ 
+Well, the signal gets smoothened even more.
+好了，信号会变得更加平滑。 
+This arrangement is named second order low-pass.
+这种安排被命名为第二阶低通。 
+Here you can see two low-pass filters, each with a 100kiloohm resistor and a 0.1microfarad capacitor switched in series and as expected, the ripple at the output of the second circuit is clearly lower than that at the first one.
+这里可以看到两个低通滤波器，每个带100kiloohm电阻和一个0.1microfarad电容器串联开关和如预期的那样，在第二电路的输出纹波在第一个比明显地低。 
+Like at a first order low-pass there is: The higher the resistance or the capacitance, the lower the ripple.
+像在第一阶低通有：电阻或电容越高，越低的纹波。 
+This second order low-pass filter is composed of 220kiloohm resistors and 0.33microfarad capacitors.
+该第二阶低通滤波器是由220kiloohm电阻和0.33microfarad电容器。 
+The signal is excellently smoothened and the DC output signal follows the variation of the pulse-width signal pretty fast.
+该信号被很好地平滑和DC输出信号如下所述脉宽信号的变化非常快。 
+A high order low-pass is optimally suitable to convert the pulse-width signal into an appropriate DC voltage.
+一个高阶低通是最佳适合于脉冲宽度信号转换成适当的DC电压。 
+The output voltage of the low-pass filter varies between 0 and 0.5V at a pulse length ranging from 0 to 2ms, considering a supply voltage of 5V.
+低通滤波器的输出电压在脉冲长度范围从0到2毫秒0和0.5V之间变化，考虑到5V的电源电压。 
+The DC voltage can be amplified by an operational amplifier with negative feedback.
+直流电压可通过用负反馈的运算放大器被放大。 
+The functionality of the negative feedback loop was treated in the video about operational amplifiers.
+负反馈环的功能是在大约运算放大器的视频处理。 
+The required gain is 10, hence a 27kΩ and a 220kΩ resistor will do the job. 
+所需的增益为10，因此，一个27kΩ和一个220KΩ电阻将做的工作。 
+The motor of a servo is driven by an H-bridge, treated in one of my previous videos.
+伺服电机是由H桥，在我以前的一个视频处理驱动。 
+The motor must turn clockwise, whenever the amplified DC voltage of the pulse-width signal is higher than the voltage output of the potentiometer operating as sensor. 
+电机必须顺时针旋转，每当脉冲宽度的信号的放大的直流电压是比电位作为传感器操作的电压输出越高。 
+On the other hand the motor must turn counterclockwise if the pulse-width signal is lower than the sensor output.
+另一方面，如果脉冲宽度信号比传感器输出下电机必须逆时针转动。 
+The direction of rotation can also be different from the scheme shown here, for example if the polarity of the potentiometer is altered.
+旋转方向也可以从若电位的极性被改变这里示出，例如方案不同。 
+A device suitable to control the H-bridge is a comparator. 
+适用于控制H桥设备是一个比较。 
+If the input voltage of the pulse-width signal is lower than that of the potentiometer, the output of the comparator equals the positive supply voltage and the motor is driven with a polarity turning the device counterclockwise. 
+如果脉冲宽度信号的输入电压是比电位时，比较器的输出等于正电源电压和电动机驱动用极性逆时针转动装置。 
+Now the motor turns the potentiometer in such a way that the voltage output of this sensor is decreasing.
+现在电机转动中，该传感器的输出电压被下降的方式电位。 
+The polarity at the motor is swapped, whenever the voltage of the pulse-width signal exceeds that of the rotational sensor, by what the output signal of the comparator is brought LOW. 
+在电动机的极性交换，每当脉冲宽度信号的电压超过了旋转传感器的，由什么比较器的输出信号被带到低。 
+Now the motor turns the potentiometer in the opposite direction, thus the voltage at the output of the sensor is increasing.
+现在电动机转动的相反方向上的电位，从而在传感器的输出电压在增加。 
+The output signal of the comparator is either 0V or it equals the positive supply voltage, thus, the motor connected to the H-bridge is always powered, turning clockwise or counterclockwise. 
+比较器的输出信号为0V或它等于正电源电压，由此，连接到H桥电机始终通电，车削顺时针或逆时针。 
+To get a third state with the motor being turned off, a window comparator can be used. 
+为了得到与马达的第三状态被关闭，一个窗口比较器都可以使用。 
+Let's assume the DC voltage coming from the pulse-width signal is half the supply voltage and the output signal of the potentiometer is above that value.
+假设直流电压从脉冲宽度信号来为电源电压的一半和电位计的输出信号高于该值。 
+The signal at the non-inverting input of the upper operational amplifier is higher than that at the inverting input.
+在上运算放大器的非反相输入端的信号比在反相输入端高。 
+As a result, the output signal of the upper operational amplifier is brought HIGH.
+其结果是，上运算放大器的输出信号变为高电平。 
+The situation is different at the lower operational amplifier:
+这种情况是在较低的运算放大器不同： 
+The output of the potentiometer is connected to the inverting input and the lower potential of the pulse-width signal is connected to the non-inverting input, hence the output state is LOW.
+电位器的输出连接到反相输入和脉冲宽度信号的低电位被连接到非反相输入端，从而输出状态为低。 
+The output state of the window comparator alters if the potential at the potentiometer pin drops slightly below that of the pulse-width signal:
+如果在电位器销的电位下降稍低于脉冲宽度信号的窗口比较器的输出状态改变： 
+The output signal of the upper operational amplifier is brought LOW.
+上部运算放大器的输出信号被带到低。 
+Caused by the voltage divider composed of R1 and R2, just a fraction of the potential produced by the pulse-width signal is attached to the non-inverting input of the lower operational amplifier.
+由R1和R2构成的分压器造成的，只是由脉冲宽度信号产生的电势的一小部分被附连到下运算放大器的非反相输入。 
+As long as the output of the potentiometer is just slightly below that of the pulse-width signal, the potential at the non-inverting input of the lower comparator is still lower than that at the inverting input, hence the output of the lower comparator stays LOW.
+只要电位计的输出是仅略低于该脉冲宽度的信号，在较低的比较器的非反相输入端的电位处于所述反相输入比仍然降低，下部比较器停留因此输出低。 
+Not until the potential at the potentiometer pin drops below that at the voltage divider, the voltage at the inverting input is lower than that at the non-inverting input and the output of the lower operational amplifier is brought HIGH, causing the motor to turn clockwise.
+直到在电位器销的电位下降到低于该在分压，在反相输入端上的电压是比在非反相输入端和下运算放大器的输出被拉高时，使马达顺时针旋转。 
+Hence there is a voltage range in which both operational amplifiers are brought LOW, by what the electric motor is turned off.
+因此存在其中两个运算放大器被带到低，由什么电动机被关断的电压范围。 
+The layout of the circuit including the H bridge, is available on the project page.
+包括H桥电路的布局，是可用的项目页面上。 
+The circuit can be used to replace the board inside of a servo.
+该电路可以被用来替换一伺服内的板。 
+Before connecting the electric motor, turn potentiometer number 2 and 3 to their middle position and potentiometer number 4 to the maximum voltage.
+电动马达连接前，转动电位计数2和3到其中间位置和电位号码4到的最大电压。 
+The servo horn has also to be turned to the center position manually.
+伺服喇叭也可以手动地转动到中央位置。 
+If the circuit is driven by a pulse-width signal of approximately 1.5ms, both LEDs should be turned off.
+如果电路是由大约1.5毫秒的脉冲宽度信号驱动两个LED应该被关闭。 
+Shifting the pulse-width signal in one direction lights up the green LED, while the red LED is turned on whenever the signal is shifted in the opposite direction.
+在一个方向上移位脉冲宽度信号点亮绿色LED，而红色LED被接通时，信号被以相反的方向移动。 
+Adjust a pulse-width signal lighting up one of the LEDs barely.
+调整的脉冲宽度信号照明起来几乎没有一个LED。 
+As soon as the motor is connected to the H bridge, it should be powered just for a short span of time, turning the potentiometer in such a way that both LEDs are turned off.
+一旦电动机被连接到H桥，它应该只是为很短的时间跨度来供电，在这两个LED熄灭这样的方式转动电位计。 
+Swap the terminals of the electric motor if the servo starts turning with full power in the wrong direction.
+交换电动马达的端子如果伺服开始在错误的方向满功率转动。 
+By turning potentiometer number 4, the maximum voltage output of the sensor and so the maximum angle of rotation at the highest duty cycle can be adjusted.
+通过转动电位计4号，在传感器的最大电压输出等旋转的最大角度在最高占空比可以调节。 
+Potentiometer number 3 varies the gain of the DC voltage caused by the pulse-width signal, thus it can be used to adjust the neutral position.
+电位器号码3而变化所造成的脉冲宽度的信号的直流电压的增益，因此，它可以用来调节中性位置。 
+The upper resistor at the voltage divider of the window comparator is replaced by a forward biased diode and a potentiometer both switched in parallel.
+在窗口比较器的分压器上端电阻由一个正向偏置二极管和一个电位器并联两个交换取代。 
+The voltage drop across the diode is approximately 0.6V and it is independent from the DC voltage caused by the pulse-width signal.
+二极管两端的电压降约为0.6V，这是独立于所造成的脉冲宽度信号中的DC电压。 
+By turning potentiometer 2, you can adjust the voltage range bringing both operational amplifiers of the window comparator LOW. 
+通过旋转电位器2，可以调整使窗口比较低的两个运算放大器的电压范围。 
+The smaller that "window" the closer the position of the servo lever to the set point.
+较小的那个的“窗口”越接近伺服杆到设定点的位置。 
+The motor starts oscillating around the set point if the window becomes too small because of the ripple at the DC signal of the pulse-width input.
+电机启动，如果窗口变得因为在脉冲宽度输入的直流信号的波动过小在设定点附近振荡。 
+The precision of the simple control circuit shown here is lower than that of commercially available servos.
+这里示出的简单的控制电路的精度比市售伺服低。 
+Furthermore there is no protection against missing or too long command pulses while the circuit is connected to the supply voltage.
+此外，还有针对缺失或太长指令脉冲没有保护，而电路连接到电源电压。 
+If the voltage at the control input drops to zero, the servo turns in one direction until stopped by the mechanics.
+如果在控制输入端的电压下降到零，伺服变为在一个方向上，直到被机械停止。 
+If too long pulses are applied to the control input or if it is connected to the positive terminal of the supply voltage, the motor starts turning in the opposite direction.
+如果太长脉冲被施加到控制输入，或者如果它被连接到电源电压的正极端子，电动机开始以相反的方向转动。 
+Usually the motor isn't always tuned fully on or off.
+通常电机不总是调谐全开或全关。 
+When turning the lever manually, you can hear the servo buzzing.
+当手动转动手柄，你可以听到嗡嗡的伺服。 
+The oscilloscope plot shows the voltage at the electric motor, which is driven by a pulse-width signal.
+示波器曲线图示出了在电动机，它是由一脉冲宽度信号驱动的电压。 
+Apparently there are no flyback diodes in parallel to the transistors of the H bridge, thus there is a noticeable voltage peaks whenever the motor is turned off.
+显然有在平行于H桥的晶体管没有续流二极管，从而有一个明显的电压峰值每当电动机被关断。 
+The duty cycle is getting larger the more the actual value of the servo lever differs from the set point. 
+占空比越来越大的多的伺服杆的实际值与设定点不同。 
+As you can see, the polarity is altering when putting pressure on the servo horn in the opposite direction.
+正如你所看到的，极性相反的方向将伺服喇叭压力时改变。 
+Caused by the ripple of the command signal, the demonstration circuit is acting in a very similar way.
+由命令信号的脉动引起的，示范电路充当以非常相似的方式。 
+When turning the servo horn, the voltage output of the potentiometer used as sensor shifts.
+当接通伺服喇叭，电位器的电压输出作为传感器的变化。 
+Because of the ripple, the upper and lower threshold of the window comparator aren't constant values and the accordant comparator is brought high, whenever the voltage peaks of the command signal are exceeding respectively underrunning the voltage level of the sensor.
+因为波纹的，窗口比较器的上限和下限阈值不是恒定值，一致比较器被带到高，每当命令信号的电压峰值超过分别撞入传感器的电压电平。 
+As you can see, the flyback diodes are suppressing the voltage peaks at the output of the H bridge whenever the motor is turned off.
+正如你所看到的，续流二极管是在每当关闭电机H桥的输出抑制电压峰值。 
+Today, servo motors are no longer controlled by analog circuits, but by programmable microcontrollers.
+如今，伺服电机不再由模拟电路控制的，而是由可编程微控制器。 
+The size of the integrated circuit is clearly smaller than that of the demonstration circuit.
+集成电路的尺寸比示范电路的明显小。 
+Nevertheless it is suitable to create your own servos.
+尽管如此，它适用于创建自己的伺服器。 
+Here you can see the mechanism used to open the tray of a CD drive turned into a servo.
+在这里，你可以看到用来打开变成一个伺服CD驱动器的托盘机制。 
+The rotational movement of the motor is turned into a linear movement of the gear rod.
+电动机的旋转运动变成了齿杆的线性运动。 
+The sensor is attached to the gear wheel driving the gear rod.
+该传感器被连接到齿轮驱动的齿轮杆。 
+You can also use a linear potentiometer attached to the gear rod, but single-turn potentiometers are usually cheaper.
+还可以使用连接到齿杆的线性电位计，但单圈电位通常是便宜。 
+A linear servo can also be made of a threaded bar driven by an electric motor and a screw-nut.
+线性伺服也可以制成由电动马达和一个螺杆 - 螺母驱动的螺纹杆的。 
+The linear potentiometer is also homemade.
+线性电位器也是自制的。 
+Its a thick pencil line at the wooden base plate with the pencil operating as sliding contact.
+它在用铅笔为滑动接触操作的木底板厚的铅笔线。 
+There are some combinations of electric motor and transmission bringing the circuit to its limit and above.
+有使电路到其极限以上电动马达和传动的一些组合。 
+Here you can see a compact geared motor with an over all gear ratio of 30 to 1.
+在这里，您可以看到与紧凑型齿轮马达超过30：1的所有齿轮比。 
+There is some clearance caused by the gearbox, affecting the whole system in an unfavorable way.
+有一些间隙引起的变速箱，影响在不利的方式整个系统。 
+The positioning of the servo is very rough.
+伺服的定位是非常粗糙。 
+When lowering the voltage range bringing both outputs of the window comparator LOW to get a more precise positioning, the control loop builds up and the lever at the output of the gearbox starts oscillating.
+当降低使窗口比较低的两个输出，以获得更精确的定位的电压范围，控制回路积聚，并在齿轮箱的输出杆开始振荡。 
+Besides the clearance, the high inertia of the long lever boosts the tendency of the system to oscillate.
+除了间隙，长杆的高惯性提高了系统振荡的倾向。 
+At the second run, the same electric motor is attached to a gearbox with a ratio of 400 to 1.
+在第二次运行中，相同的电动机被连接到具有400至1的比率的变速箱。 
+There is also clearance caused by the gearbox, but because of the clearly lower revolution speed at the output shaft, the positioning of the servo lever is more precisely.
+也有引起变速箱间隙，但由于在输出轴的明显低于转速，伺服杠杆的定位更精确。 
+Note the second order low-pass filter at the pulse-width input which is reducing the ripple to allow using a small voltage range at the window comparator.
+注意在该降低的脉动，以允许使用小的电压范围在窗口比较器的脉冲宽度输入二阶低通滤波器。 
+Analog circuits are very sensitive against voltage fluctuations which are inevitable whenever high power loads are switched. 
+模拟电路反对电压波动时高功率负载切换这是不可避免的非常敏感。 
+You can try to minimize the ripple of the supply voltage, but the accurateness of this demonstration circuit will always be lower than that of commercially available boards.
+可以尽量减少电源电压的脉动，但这个示范电路的准确性将总是比市售板的下部。 
+Some later we will see how to increase the quality of these homebuilt servos.
+有些以后我们将看到如何提高这些自制伺服电机的质量。 
+In robotics, servos are not controlled by turning a potentiometer, but by digitally generated pulse-width signals.
+在机器人，伺服系统不被转动一个电位器控制，而是由数字生成的脉宽信号。 
+A single output pin is sufficient to access peripherals with a servo and by using a sensor and doing some coding you can build a control circuit.
+单输出引脚足以与伺服接入外围设备，并通过使用传感器，并做一些编码，你可以建立一个控制电路。 
+Two servos are used here to rotate a small camera around its X and Y axis.
+两个伺服这里使用绕其X和Y轴旋转的小相机。 
+The software controls the servos in such a way that the camera is always pointing to the brightest light.
+该软件控制以这样的方式的伺服系统，该相机总是指向最亮的光。 
+Servos can be modified to make them usable as very compact geared motors.
+伺服可以被修改，使它们可作为非常紧凑的齿轮传动马达。 
+First of all the hard stops at the gear wheel of the output shaft have to be removed.
+首先，在输出轴的齿轮的所有硬止动必须去除。 
+At the servo type shown here, the calm at the top of the gear wheel has to be grinded.
+在这里示出的伺服类型，在齿轮顶部的平静必须被研磨。 
+The second step is removing the linkage between the potentiometer and the final gear drive.
+第二步骤是除去电位和最终齿轮传动之间的联系。 
+The shaft of the potentiometer is simply cut off at this type.
+电位器的轴在这种类型的简单切断。 
+Without the physical stops and the linkage to the potentiometer, the servo horn can rotate continuously in either direction.
+没有物理停止和联动的电位器，伺服喇叭可在任一方向连续旋转。 
+If the potentiometer is fixed at its middle position - here this is done by some glue...
+如果电位被固定在它的中间位置 - 在这里，这是通过一些胶水做... 
+...the sensor reading is kept at 0°, independently from the true position of the servo horn.
+ ...传感器读数被保持在0℃，独立地从伺服喇叭的真正位置。 
+The potentiometer can also be replaced by a fixed voltage divider with a resistance value of some kiloohm. 
+电位也可通过与一些千欧姆的电阻值一个固定分压器取代。 
+A pulse-width signal of 1ms according to a position of -45° will cause the motor to spin with full power in one direction,...
+根据-45°的位置1毫秒的脉宽信号将导致电机在一个方向上与全功率旋转，... 
+...while a pulse width of 2ms makes the motor start spinning in the opposite direction.
+ ...而2ms的脉冲宽度使得电机启动以相反的方向旋转。 
+The power delivered to the motor will decrease, the closer the pulse-width signal gets to 1.5ms and finally the motor stops spinning at that pulse-width, which correlates to the neural position.
+输送到马达会降低功率，越接近脉冲宽度信号到达为1.5ms和最后电动机停止在该脉冲宽度，其关联到神经的位置旋转。 
+As mentioned before, some controllers also shut down the motor at a pulse length of 0ms, which means there are no pulses coming in.
+如前所述，有些控制器也关闭电动机在0毫秒的脉冲长度，这意味着没有脉冲进来。 
+The available range of drive speed depends on the motor driver circuit and varies between different manufacturer types.
+驱动速度的可用范围取决于电机驱动电路上和不同制造商的类型之间变化。 
+Such "hacked" servos are very common drives in small scale robotics.
+这种“黑客”舵机规模小机器人很常见的驱动器。 
+This remote controlled camera arm is actuated by a hacked servo operating as a winch.
+这种远程控制摄像头的胳膊被砍死伺服作卷扬工作启动。 
+The potentiometer serving as sensor is attached to the pivot point of the lever, thus the angle of the camera arm is adjusted by the electronics instead of the angle of the servo horn.
+作为传感器电位被连接到杠杆的枢转点，从而相机臂的角度由电子代替的伺服喇叭的角度调整。 
+The lever is moving slowly, but in turn the low electric power of the tiny servo is sufficient to lift the camera.
+杠杆缓慢移动，但反过来的微小伺服的低电功率足以抬起摄像机。 
+The angle of rotation can be extended to more than 360° by using two gear wheels and attaching the potentiometer at the larger one while the smaller wheel is mounted at the pivot axis of the mechanism.
+旋转的角度可以通过使用两个齿轮和而较小轮被安装在所述机构的枢转轴线附连在较大的一个的电位被扩展到超过360°。 
+The camera of the robot arm can do a full turn by what you can observe my whole RoboSpatium.
+机器人手臂的相机可以做什么用，你可以看到我的整个RoboSpatium一整圈。 
+The RoboSpatium is the universe of my remote controlled robots - you can try it out by simply using a browser!
+该RoboSpatium是我的远程控制的机器人宇宙 - 你可以通过简单地使用浏览器试试吧！ 
+Another modification deals with the electronics of a servo:
+与伺服的电子另一个修改交易： 
+The board controls a tiny electric motor, thus the maximum power output of the integrated H bridge isn't very high.
+板控制一个微小的电动马达，从而在集成的H桥的最大输出功率不是很高。 
+To be able to control high power motors, an H bridge composed of power transistors is required.
+为了能够控制高功率电动机，功率晶体管构成的H桥是必需的。 
+The precisely operating electronics of the servo board can be used to control a power H bridge.
+伺服电路板的精确操作电子装置可以被用于控制功率H桥。 
+The input signal of the high power H bridge is generated by the output signal of the low power H bridge at the servo board.
+高功率H桥的输入信号是通过在伺服板上的低功率H桥的输出信号产生的。 
+The signal is coming from the two cables usually running to the motor, which can not be directly attached to the inputs of our power H bridge.
+该信号从两根电缆通常运行向电动机，它不能直接连接到我们的电力H桥的输入端来。 
+The oscilloscope plot shows the curve progression at the output of the small signal H bridge; It is half the supply voltage whenever the set-point of the pulse-width signal meets the actual position of the potentiometer.
+示波器曲线图显示了在小信号H桥的输出的曲线进展;它是电源电压的一半时，脉冲宽度信号的设定点满足电位的实际位置。 
+As demonstrated in the video about H bridges, such a device should never be driven by half the supply voltage or else a high cross current is running through the transistors.
+如在关于H桥的视频演示，这种装置不应该由电源电压的一半驱动要不然一个高交电流通过晶体管运行。 
+When turning the potentiometer in one direction, the oscilloscope displays two square wave signals, one above and one below the midline.
+当在一个方向转动电位计，该示波器显示两个方波信号，一个在上面，一个中线下方。 
+When turning the sensor fully into this direction, we can see a green line at HIGH level and a yellow line at ground level.
+当完全转动传感器进这个方向，我们可以看到在高电平绿线和在地面上一个黄线。 
+When turning the potentiometer into the opposite direction, the signals are changing position whenever the sensor crosses the center setting.
+当转动电位计成相反的方向，该信号被改变，只要在传感器穿过中心设置位置。 
+Now the yellow curve is above the mid line and if the potentiometer is turned to the bedstop, we can see a green line at zero volts, which is LOW level and a yellow line at the potential of the supply voltage, which is HIGH level.
+现在黄色曲线是中期线以上，如果电位被接通到bedstop，我们可以看到在零伏的绿线，这是低电平和在电源电压，这是高电平的电位的黄线。 
+To be able to control the power H bridge by those signals, we need two comparators and a reference voltage somewhere between half and the total supply voltage.
+能够通过这些信号来控制功率H桥，我们需要两个比较器和半和总电源电压之间的某处的参考电压。 
+A half bridge is driven by a LOW signal, whenever the voltage at the related output of the servo board is below the reference voltage, which is 2/3 of the total supply voltage at the drawing shown here.
+半电桥由一个低电平信号，当在伺服板的相关输出的电压为基准电压，这是在这里示出的绘制有关的总电源电压的2/3以下驱动。 
+Whenever the potential at one of the output pins exceeds the reference potential, the related half bridge is driven by a HIGH signal.
+每当在输出销中的一个的电位超过基准电位时，相关的半桥由高信号来驱动。 
+That's demonstrated at the real circuit.
+这证明在实际电路。 
+The yellow curve displaying the output signal of the high power H bridge is LOW whenever the green curve with the signal of the low power H bridge stays below the reference voltage.
+黄色曲线显示高功率H桥的输出信号为LOW时用低功率H桥的信号的绿色曲线保持低于参考电压。 
+Whenever the green signal of the low power half bridge exceeds the reference voltage, the progression of the yellow curve follows that of the green curve except the fact that the HIGH level is at 12V and the LOW level is at zero volts.
+每当低功率半桥的绿色信号超过参考电压时，黄色曲线的发展如下，除了这一事实高电平是在12V和低电平是在零伏的绿色曲线。 
+Finally the signal of the power half bridge is permanently HIGH if the signal of the low power half bridge is also permanently HIGH.
+最后的功率半桥的信号是永久高，如果低功率半桥的信号也永久地高。 
+The circuit combines the precision of commercially available control circuits with the power of a homebuilt H bridge - the layout is available on the project page.
+该电路结合了商用控制电路的用自制的H桥功率精度 - 布局可在项目页面上。 
+Some longer wire segments are soldered to the leads running to the potentiometer so that the sensor can easily be attached to different types of servos.
+一些较长导线段被焊接到运行的电位，使得传感器可以很容易地连接到不同类型的伺服系统的引线。 
+There are no adjustments necessary to operate the circuit; just note the correct polarity of the electric motor:
+有没有操作电路必要的调整;刚刚记下的电动马达的极性正确： 
+The procedure starts with adjusting the homebuilt servo to its neutral position.
+该过程与调节自制伺服到它的中间位置开始。 
+Now drive the circuit with a pulse-width signal so that one of the LEDs is lighted up barely.
+现在驱动电路，使得LED之一被勉强点亮的脉冲宽度信号。 
+When attaching the motor to the H bridge, it should start spinning just for a short span of time so that both LEDs are turned off.
+当安装电动机至H桥，它应该开始的时间很短的跨度，使得两个LED被关闭只是旋转。 
+If the motor starts spinning with full power into the opposite direction, you must swap the polarity.
+如果马达开始全功率纺成相反的方向，则必须交换极性。 
+Once again the motor with a transmission of 400 to 1 is used and the movement of this servo is very precisely.
+再次使用具有400至1的传输马达和此伺服的移动是非常精确。 
+The servo speed is approximately 2.17s for 90°...
+伺服速度大约为2.17s为90度... 
+...and the torque is slightly too high for this this measurement setup.
+ ...和转矩稍微过高此该测量设置。 
+When using the gearbox with a transmission of 30 to 1, this circuit can be used to control the servo at least at a supply voltage of 6V.
+当使用具有30至1传输的变速箱，该电路可用于在至少6V的电源电压，以控制伺服。 
+The clearance of the gearbox and the attachment of the potentiometer still prevent a precise adjustment.
+变速箱和间隙电位的连接仍然防止一个精确调整。 
+The servo speed is very high...
+伺服的速度是非常高的... 
+...and the torque is approximately 33Ncm.
+ ...和转矩约为33Ncm。 
+If you like to build a high speed device with a high torque, you can convert a windscreen wiper motor into a servo.
+如果你想建立一个高速设备具有高扭矩，可以在挡风玻璃雨刮电机转换为伺服。 
+The electric motor drives a worm gear with a mechanical advantage of 110 to 1.
+电动机驱动用110至1的机械优势的蜗轮。 
+The motor is operated with 6V, because the speed is too high when using a 12V battery, causing oscillations in the system.
+电动机用6V操作时，因为该速度用12V电池时，引起在系统振荡过高。 
+A current of up to 3.5Amps is running through the windings of the motor, which is why heat sinks at the power transistors are required in continuous operation.
+高达3.5安培的电流通过电动机，这就是为什么在连续操作，需要在功率晶体管的散热片的绕组运行。 
+The torque is around 260Ncm and while the rotor is locked, a current of 3.5Amps is running through the H bridge and the motor.
+转矩是围绕260Ncm并且当转子被锁定，3.5安培的电流通过H桥和电机运行。 
+When using a larger mechanical advantage, the speed is decreasing, but there are fewer oscillations around the set point of the servo horn.
+当使用较大的机械优点，速度降低，但也有围绕伺服喇叭的设定点较少的振荡。 
+This is a very simple gear train using a winch.
+这是使用一个绞盘一个非常简单的齿轮系。 
+The higher the build quality, the better the accuracy of the servo.
+在构建质量越高，伺服精度越好。 
+I am sure you can make it better...
+我相信你可以做的更好？ 
+You might have recognized that the pulse-width signal of our servo driver is not absolutely stable.
+你可能已经认识到，我们的伺服驱动器的脉冲宽度信号不是绝对稳定。 
+Especially when switching high power motors, the servo starts oscillating around the set point.
+开关大功率电机特别是当，在伺服开始振荡在设定点附近。 
+Digital circuits generate better output signals than the analog circuit used so far.
+数字电路产生比迄今所用的模拟电路更好的输出信号。 
+Now the windscreen wiper motor is controlled by a computer.
+现在挡风玻璃刮水器电机由计算机控制。 
+The lever follows the slow variation of the pulse-width signal without any oscillations.
+杠杆如下脉宽信号没有任何振动的缓慢变化。 
+Another advantage of using this tiny computer is the variable speed of the system:
+使用这种微型计算机的另一个优点是该系统的变速： 
+Whenever the lever must rotate for a large angle, the servo can be operated with full speed at the beginning of the movement while the rotational speed can be reduced before reaching the end position.
+每当杆必须要大的角度旋转时，伺服可以全速在运动开始操作，同时旋转速度可以在到达终点位置之前被减小。 
+If the sensor reading is directly done by a computer or a microcontroller and if the H bridge is also directly driven by the calculating machine, the resulting device is a digital servo.
+如果传感器读数直接由计算机或微控制器完成，如果该H桥还直接由计算机驱动时，得到的器件是一个数字伺服。 
+How to implement this will be treated in one of the subsequent videos.
+如何实现这将在随后的视频之一进行处理。 
+Simply use the circuits treated in this video to start your own experiments around servos.
+使用时只需在视频处理电路，开始围绕舵机自己的实验。 
+Thanks for watching and: "I'll be back!" Subtitles End: mo.dbxdb.com
+感谢收看和：“我会回来的”  Subtitles End: mo.dbxdb.com
